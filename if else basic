@@ -1,0 +1,5 @@
+num=int(input("Enter a no "))
+if num>=18:
+    print("can vote")
+else:
+    print("can't vote")
