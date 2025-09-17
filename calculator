@@ -1,0 +1,33 @@
+#calculator
+print("select operations")
+print("1. Add")
+print("2. Sub")
+print("3. Mult")
+print("4. Div")
+print("5. Mod")
+
+
+
+choice = int(input("Enter choice (1/2/3/4/5): "))
+
+if choice < 6:
+    
+    num1 = float(input("Enter first number: "))
+    num2 = float(input("Enter second number: "))
+    if int(choice == 1):
+        print("Result:", num1 + num2)
+    elif int(choice == 2):
+        print("Result:", num1 - num2)
+    elif int(choice == 3):
+        print("Result:", num1 * num2)
+    elif int(choice == 4):
+        print("Result:", num1 / num2)
+    elif int(choice == 5):
+        print("Result:", num1 % num2)
+    else:
+        print("Invalid")
+
+else:
+    print("invalid output")
+
+
