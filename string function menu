@@ -1,0 +1,81 @@
+fruits = ["Apple", "Banana", "Mango", "Orange"]
+
+while True:
+    print("\n--------------------------- Fruits List Menu ----------------------------")
+    print("1. Insert at end")
+    print("2. Insert at particular position")
+    print("3. Update a fruit")
+    print("4. Delete at end")
+    print("5. Delete at particular position")
+    print("6. Delete by value")
+    print("7. Delete entire list")
+    print("8. Display list")
+    print("9. Exit")
+
+    choice = input("Enter your choice (1-9): ")
+
+    if choice == '1':
+        fruit = input("Enter fruit name to insert at end: ")
+        fruits.append(fruit)
+        print(" Fruit added ")
+        print("Updated list:", fruits)
+
+    elif choice == '2':
+        p = int(input("Enter position to insert (starting from 0): "))
+        fruit = input("Enter fruit name to insert: ")
+        if 0 <= p <= len(fruits):
+            fruits.insert(p, fruit)
+            print(" Fruit inserted successfully.")
+        else:
+            print(" Invalid position!")
+        print("Updated list:", fruits)
+
+    elif choice == '3':
+        p = int(input("Enter position to update (starting from 0): "))
+        if 0 <= p < len(fruits):
+            new_fruit = input("Enter new fruit name: ")
+            fruits[p] = new_fruit
+            print(" Fruit updated successfully.")
+        else:
+            print(" Invalid position!")
+        print("Updated list:", fruits)
+
+    elif choice == '4':
+        if fruits:
+            removed = fruits.pop()
+            print(" Deleted  from end.")
+        else:
+            print(" List is empty!")
+        print("Updated list:", fruits)
+
+    elif choice == '5':
+        p = int(input("Enter position to delete : "))
+        if 0 <= p < len(fruits):
+            removed = fruits.pop(p)
+            print(" Deleted  from position .")
+        else:
+            print("Invalid position!")
+        print("Updated list:", fruits)
+
+    elif choice == '6':
+        fruit = input("Enter fruit name to delete: ")
+        if fruit in fruits:
+            fruits.remove(fruit)
+            print(" Deleted  from list.")
+        else:
+            print("fruit not found in list!")
+        print("Updated list:", fruits)
+
+    elif choice == '7':
+        fruits.clear()
+        print(" all fruits deleted. List is now empty.")
+
+    elif choice == '8':
+        print(" Current fruits list:", fruits)
+
+    elif choice == '9':
+        print(" Exiting program...")
+        break
+
+    else:
+        print(" Invalid choice! Please enter between 1-9.")
